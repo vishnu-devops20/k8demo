@@ -1,12 +1,9 @@
 pipeline {
         agent any
         environment {
-		 registry = "vishnu-devops20/sprint6demo"
-                 registryCredential = 'docker-cred'
-                 dockerImage = ''
-		PROJECT_ID = 'wired-rex-283811'
- 		CLUSTER_NAME = 'sprint6-demo-gcloud-cluster2'
- 		LOCATION = 'us-east1-b'
+		PROJECT_ID = 'zinc-gist-283714'
+ 		CLUSTER_NAME = 'k8-gcloud-cluster'
+ 		LOCATION = 'us-west2-a'
  		CREDENTIALS_ID = 'google-key'
                     }
 		
@@ -17,7 +14,7 @@ pipeline {
 				sh 'ls -ltr'
 				sh 'pwd'
 				step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID,
-				 clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'sample.yaml',
+				 clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml',
 				 credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
 				echo "Deployment Finished"
  	                     }
