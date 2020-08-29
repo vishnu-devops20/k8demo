@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'zinc-gist-283714'
  		CLUSTER_NAME = 'k8-gcloud-cluster'
  		LOCATION = 'us-west2-a'
- 		CREDENTIALS_ID = 'google-key'
+ 		CREDENTIALS_ID = 'k8-sprint6'
                     }
 		
 	stages {           
